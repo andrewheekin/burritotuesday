@@ -9,7 +9,7 @@ module.exports = {
   },
   module: {
     loaders: [
-      { exclude: /node_modules/, loader: 'babel' },
+      { test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader'] },
       { test: /\.json$/, loader: 'json' },
     ]
   },
@@ -19,5 +19,5 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     contentBase: './'
-  }
+  },
 };
